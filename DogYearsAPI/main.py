@@ -1,20 +1,17 @@
 import uvicorn
 import json
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 
 app = FastAPI()
 
-@app.get('/{dog_year}')
-def read_item(dog_year):
-    thingy = json.loads(dog_year)
-    print(thingy)
-    print(type(thingy))
-#E    if type(thingy) == int:
-#E        print(type(thingy))
-#E        print('int')
-#E    else:
-#E        print(type(thingy))
-#E        print('string')
+
+
+@app.get("/items/")
+async def read_item(request: Request):
+    params = dict(request.query_params)
+    print(type(params))
+    print(params)
+    return params
 
 
 
