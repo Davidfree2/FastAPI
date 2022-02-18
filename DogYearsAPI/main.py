@@ -12,8 +12,14 @@ async def read_item(request: Request):
     print(type(params))
     print(params)
     human_dog_years = int(params['dogyear'])
-    to_dog_years = human_dog_years * 2
-    return to_dog_years
+    if human_dog_years == 1:
+        return 15
+    elif human_dog_years == 2:
+        return 24
+    else:
+        foo = human_dog_years -2
+        bar = foo * 4 + 24
+        return bar
 
 
 
