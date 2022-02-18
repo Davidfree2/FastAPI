@@ -6,12 +6,14 @@ app = FastAPI()
 
 
 
-@app.get("/items/")
+@app.get("/convert_dog_years/")
 async def read_item(request: Request):
     params = dict(request.query_params)
     print(type(params))
     print(params)
-    return params
+    human_dog_years = int(params['dogyear'])
+    to_dog_years = human_dog_years * 2
+    return to_dog_years
 
 
 

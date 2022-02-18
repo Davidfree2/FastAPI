@@ -1,6 +1,5 @@
-foo = 2
+dog = {
+        'hello': 'world',
+        }
 
-if type(foo) != int:
-    print('not int')
-else:
-    print('int')
+print(dog['hello'])
