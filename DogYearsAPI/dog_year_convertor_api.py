@@ -4,6 +4,9 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+@app.get("/")
+async def home():
+    return f'Hello! try using the url + /items/dog_year for example use url/items/dog_year=2'
 
 @app.get("/items/")
 async def read_item(dog_year: int):
